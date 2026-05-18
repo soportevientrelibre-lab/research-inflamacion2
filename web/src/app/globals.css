@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+/* ===== VIENTRE LIBRE · RESET 21 — Design System ===== */
+
+@theme inline {
+  /* Brand Colors */
+  --color-olive: #5C6F47;
+  --color-olive-light: #7A8F63;
+  --color-olive-dark: #3D4A2F;
+  --color-cream: #F5F0E8;
+  --color-cream-dark: #EDE5D8;
+  --color-coral: #E07856;
+  --color-coral-light: #E89478;
+  --color-coral-dark: #C85F3D;
+  --color-navy: #1E2A3A;
+  --color-navy-light: #2D3F55;
+
+  /* Semantic Colors */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-navy);
+  --color-primary: var(--color-coral);
+  --color-secondary: var(--color-olive);
+  --color-muted: #8B7E6A;
+
+  /* Typography */
+  --font-heading: var(--font-fraunces);
+  --font-body: var(--font-inter);
+}
+
+/* ===== Base Styles ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-navy);
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), Georgia, serif;
+}
+
+/* ===== Selection ===== */
+::selection {
+  background-color: var(--color-coral);
+  color: white;
+}
+
+/* ===== Custom Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-olive-light);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-olive);
+}
+
+/* ===== Quiz Progress Bar ===== */
+.progress-bar-fill {
+  background: linear-gradient(90deg, var(--color-olive), var(--color-olive-light));
+  transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ===== Glassmorphism Cards ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/* ===== Soft Glow Effect ===== */
+.glow-coral {
+  box-shadow: 0 0 40px rgba(224, 120, 86, 0.15), 0 0 80px rgba(224, 120, 86, 0.08);
+}
+
+.glow-olive {
+  box-shadow: 0 0 40px rgba(92, 111, 71, 0.15), 0 0 80px rgba(92, 111, 71, 0.08);
+}
+
+/* ===== Subtle Pattern Background ===== */
+.bg-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(92, 111, 71, 0.06) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+/* ===== Botanical Divider ===== */
+.divider-botanical {
+  position: relative;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-olive-light), transparent);
+  margin: 3rem auto;
+  max-width: 200px;
+}
+.divider-botanical::after {
+  content: "✦";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--color-cream);
+  padding: 0 12px;
+  color: var(--color-olive);
+  font-size: 14px;
+}
+
+/* ===== Animations ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2.5s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s linear infinite;
+}
