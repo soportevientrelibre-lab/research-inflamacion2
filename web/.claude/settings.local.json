@@ -4,7 +4,10 @@
       "Bash(npm run *)",
       "mcp__playwright__browser_navigate",
       "mcp__playwright__browser_take_screenshot",
-      "mcp__playwright__browser_evaluate"
+      "mcp__playwright__browser_evaluate",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(curl -s http://localhost:3000/programa -o /dev/null -w \"%{http_code}\")"
     ]
   }
 }
